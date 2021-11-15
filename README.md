@@ -20,7 +20,7 @@ $ composer require jawabapp/laravel-gamify
 ```php
 'providers' => [
     //...
-    JawabApp\Gamify\GamifyServiceProvider::class
+    Jawabapp\Gamify\GamifyServiceProvider::class
 ]
 ```
 
@@ -29,13 +29,13 @@ In Laravel 5.5 and above the service provider automatically.
 publish the config file:
 
 ```
-php artisan vendor:publish --provider="JawabApp\Gamify\GamifyServiceProvider" --tag="config"
+php artisan vendor:publish --provider="Jawabapp\Gamify\GamifyServiceProvider" --tag="config"
 ```
 
 **3** - Now publish the migration for gamify tables:
 
 ```
-php artisan vendor:publish --provider="JawabApp\Gamify\GamifyServiceProvider" --tag="migrations"
+php artisan vendor:publish --provider="Jawabapp\Gamify\GamifyServiceProvider" --tag="migrations"
 ```
 
 _Note:_ It will generate migration for `reputations`, `badges` and `user_badges` tables along with add reputation field migration for `users` table to store the points, you will need to run `composer require doctrine/dbal` in order to support dropping and adding columns.
@@ -51,7 +51,7 @@ If your payee (model who will be getting the points) model is `App\User` then yo
 **1.** After package installation now add the **Gamify** trait on `App\User` model or any model who acts as **user** in your app.
 
 ```php
-use JawabApp\Gamify\Gamify;
+use Jawabapp\Gamify\Gamify;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -75,7 +75,7 @@ It will create a PointType class named `PostCreated` under `app/Gamify/Points/` 
 
 namespace App\Gamify\Points;
 
-use JawabApp\Gamify\PointType;
+use Jawabapp\Gamify\PointType;
 
 class PostCreated extends PointType
 {
@@ -181,7 +181,7 @@ If you want to get all the points given on a `subject` model. You should define 
      */
     public function reputations()
     {
-        return $this->morphMany('JawabApp\Gamify\Reputation', 'subject');
+        return $this->morphMany('Jawabapp\Gamify\Reputation', 'subject');
     }
 ```
 
@@ -245,7 +245,7 @@ class PostCreated extends PointType
 
 #### Event on reputation changed
 
-Whenever user point changes it fires `\JawabApp\Gamify\Events\ReputationChanged` event which has the following payload:
+Whenever user point changes it fires `\Jawabapp\Gamify\Events\ReputationChanged` event which has the following payload:
 
 ```php
 class ReputationChanged implements ShouldBroadcast {
@@ -295,7 +295,7 @@ It will create a BadgeType class named `FirstContribution` under `app/Gamify/Bad
 
 namespace App\Gamify\Badges;
 
-use JawabApp\Gamify\BadgeType;
+use Jawabapp\Gamify\BadgeType;
 
 class FirstContribution extends BadgeType
 {
@@ -374,7 +374,7 @@ return [
     'payee_model' => '\App\User',
 
     // Reputation model
-    'reputation_model' => '\JawabApp\Gamify\Reputation',
+    'reputation_model' => '\Jawabapp\Gamify\Reputation',
 
     // Allow duplicate reputation points
     'allow_reputation_duplicate' => true,
@@ -386,7 +386,7 @@ return [
     'channel_name' => 'user.reputation.',
 
     // Badge model
-    'badge_model' => '\JawabApp\Gamify\Badge',
+    'badge_model' => '\Jawabapp\Gamify\Badge',
 
     // Where all badges icon stored
     'badge_icon_folder' => 'images/badges/',

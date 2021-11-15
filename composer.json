@@ -32,7 +32,7 @@
   },
   "autoload": {
     "psr-4": {
-      "JawabApp\\Gamify\\": "src/"
+      "Jawabapp\\Gamify\\": "src/"
     },
     "files": [
       "src/helpers.php"
@@ -40,13 +40,13 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "JawabApp\\Gamify\\Tests\\": "tests/"
+      "Jawabapp\\Gamify\\Tests\\": "tests/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "JawabApp\\Gamify\\GamifyServiceProvider"
+        "Jawabapp\\Gamify\\GamifyServiceProvider"
       ]
     }
   },

@@ -1,12 +1,12 @@
 <?php
 
-namespace JawabApp\Gamify;
+namespace Jawabapp\Gamify;
 
 use Illuminate\Database\Query\Builder;
 use Illuminate\Database\Eloquent\Model;
-use JawabApp\Gamify\Exceptions\PointsNotDefined;
-use JawabApp\Gamify\Exceptions\InvalidPayeeModel;
-use JawabApp\Gamify\Exceptions\PointSubjectNotSet;
+use Jawabapp\Gamify\Exceptions\PointsNotDefined;
+use Jawabapp\Gamify\Exceptions\InvalidPayeeModel;
+use Jawabapp\Gamify\Exceptions\PointSubjectNotSet;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 abstract class PointType

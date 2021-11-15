@@ -1,6 +1,6 @@
 <?php
 
-namespace JawabApp\Gamify\Events;
+namespace Jawabapp\Gamify\Events;
 
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;

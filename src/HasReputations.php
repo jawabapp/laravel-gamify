@@ -1,8 +1,8 @@
 <?php
 
-namespace JawabApp\Gamify;
+namespace Jawabapp\Gamify;
 
-use JawabApp\Gamify\Events\ReputationChanged;
+use Jawabapp\Gamify\Events\ReputationChanged;
 
 trait HasReputations
 {

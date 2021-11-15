@@ -1,6 +1,6 @@
 <?php
 
-namespace JawabApp\Gamify;
+namespace Jawabapp\Gamify;
 
 use Illuminate\Database\Eloquent\Model;
 

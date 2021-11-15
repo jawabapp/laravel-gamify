@@ -1,8 +1,8 @@
 <?php
 
-namespace JawabApp\Gamify\Tests\Models;
+namespace Jawabapp\Gamify\Tests\Models;
 
-use JawabApp\Gamify\Gamify;
+use Jawabapp\Gamify\Gamify;
 use Illuminate\Database\Eloquent\Model;
 
 class User extends Model

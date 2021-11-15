@@ -1,6 +1,6 @@
 <?php
 
-namespace JawabApp\Gamify\Exceptions;
+namespace Jawabapp\Gamify\Exceptions;
 
 use Exception;
 

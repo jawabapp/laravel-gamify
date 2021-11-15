@@ -1,6 +1,6 @@
 <?php
 
-namespace JawabApp\Gamify;
+namespace Jawabapp\Gamify;
 
 trait Gamify
 {

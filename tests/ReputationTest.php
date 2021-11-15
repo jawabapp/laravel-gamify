@@ -1,11 +1,11 @@
 <?php
 
-namespace JawabApp\Gamify\Tests;
+namespace Jawabapp\Gamify\Tests;
 
-use JawabApp\Gamify\PointType;
+use Jawabapp\Gamify\PointType;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Database\Eloquent\Model;
-use JawabApp\Gamify\Events\ReputationChanged;
+use Jawabapp\Gamify\Events\ReputationChanged;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ReputationTest extends TestCase

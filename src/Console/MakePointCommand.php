@@ -1,6 +1,6 @@
 <?php
 
-namespace JawabApp\Gamify\Console;
+namespace Jawabapp\Gamify\Console;
 
 use Illuminate\Console\GeneratorCommand;
 

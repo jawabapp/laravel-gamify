@@ -1,9 +1,9 @@
 <?php
 
-namespace JawabApp\Gamify\Tests\Badges;
+namespace Jawabapp\Gamify\Tests\Badges;
 
-use JawabApp\Gamify\BadgeType;
-use JawabApp\Gamify\Tests\Models\User;
+use Jawabapp\Gamify\BadgeType;
+use Jawabapp\Gamify\Tests\Models\User;
 
 class FirstThousandPoints extends BadgeType
 {

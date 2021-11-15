@@ -1,14 +1,14 @@
 <?php
 
-namespace JawabApp\Gamify;
+namespace Jawabapp\Gamify;
 
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Event;
-use JawabApp\Gamify\Listeners\SyncBadges;
+use Jawabapp\Gamify\Listeners\SyncBadges;
 use Illuminate\Support\ServiceProvider;
-use JawabApp\Gamify\Console\MakeBadgeCommand;
-use JawabApp\Gamify\Console\MakePointCommand;
-use JawabApp\Gamify\Events\ReputationChanged;
+use Jawabapp\Gamify\Console\MakeBadgeCommand;
+use Jawabapp\Gamify\Console\MakePointCommand;
+use Jawabapp\Gamify\Events\ReputationChanged;
 
 
 use RecursiveDirectoryIterator;

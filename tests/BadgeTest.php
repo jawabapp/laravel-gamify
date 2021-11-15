@@ -1,6 +1,6 @@
 <?php
 
-namespace JawabApp\Gamify\Tests;
+namespace Jawabapp\Gamify\Tests;
 
 class BadgeTest extends TestCase
 {
