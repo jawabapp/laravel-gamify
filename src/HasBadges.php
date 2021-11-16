@@ -15,7 +15,7 @@ trait HasBadges
         $linkable_column_name = snake_case(str_singular($table_name));
 
         return $this->belongsToMany(
-            config('gamify.payee_model'),
+            Badge::class,
             $linkable_column_name . '_badges',
             $linkable_column_name . '_id',
             'badge_id'
