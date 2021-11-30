@@ -54,7 +54,7 @@ class GamifyServiceProvider extends ServiceProvider
         if (config('gamify.listeners.new_badge_earned')) {
             Event::listen(
                 BadgeEarned::class,
-                config('community.listeners.new_badge_earned')
+                config('gamify.listeners.new_badge_earned')
             );
         }
     }
