@@ -34,8 +34,15 @@ trait HasBadges
 
         $badgeIds = app('badges')->filter
             ->qualifier($user)
-            ->map->getBadgeId();
+            ->map
+            ->getBadgeId();
 
         $user->badges()->sync($badgeIds);
+
+        $new_badges = Badge::whereNotIn('id', $badgeIds)->get();
+
+        foreach ($new_badges as $new_badge) {
+            event(new BadgeEarned($user, $new_badge));
+        }
     }
 }

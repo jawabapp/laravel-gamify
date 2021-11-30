@@ -33,5 +33,9 @@ return [
     ],
 
     // Default level
-    'badge_default_level' => 1
+    'badge_default_level' => 1,
+
+    'listeners' => [
+        'new_badge_earned' => null,
+    ],
 ];

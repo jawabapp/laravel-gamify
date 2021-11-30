@@ -2,19 +2,18 @@
 
 namespace Jawabapp\Gamify;
 
+use RegexIterator;
+use RecursiveRegexIterator;
+use RecursiveIteratorIterator;
+use RecursiveDirectoryIterator;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Event;
-use Jawabapp\Gamify\Listeners\SyncBadges;
 use Illuminate\Support\ServiceProvider;
+use Jawabapp\Gamify\Events\BadgeEarned;
+use Jawabapp\Gamify\Listeners\SyncBadges;
 use Jawabapp\Gamify\Console\MakeBadgeCommand;
 use Jawabapp\Gamify\Console\MakePointCommand;
 use Jawabapp\Gamify\Events\ReputationChanged;
-
-
-use RecursiveDirectoryIterator;
-use RecursiveIteratorIterator;
-use RecursiveRegexIterator;
-use RegexIterator;
 
 class GamifyServiceProvider extends ServiceProvider
 {
@@ -51,6 +50,13 @@ class GamifyServiceProvider extends ServiceProvider
 
         // register event listener
         Event::listen(ReputationChanged::class, SyncBadges::class);
+
+        if (config('gamify.listeners.new_badge_earned')) {
+            Event::listen(
+                BadgeEarned::class,
+                config('community.listeners.new_badge_earned')
+            );
+        }
     }
 
     /**
