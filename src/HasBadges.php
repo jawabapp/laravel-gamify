@@ -2,6 +2,9 @@
 
 namespace Jawabapp\Gamify;
 
+use Jawabapp\Gamify\Events\BadgeEarned;
+use Illuminate\Support\Facades\Log;
+
 trait HasBadges
 {
     /**
@@ -35,11 +38,12 @@ trait HasBadges
         $badgeIds = app('badges')->filter
             ->qualifier($user)
             ->map
-            ->getBadgeId();
+            ->getBadgeId()
+            ->toArray();
 
-        $user->badges()->sync($badgeIds);
+        $data = $user->badges()->sync($badgeIds);
 
-        $new_badges = Badge::whereNotIn('id', $badgeIds)->get();
+        $new_badges = Badge::whereIn('id', $data['attached'] ?? [])->get();
 
         foreach ($new_badges as $new_badge) {
             event(new BadgeEarned($user, $new_badge));
