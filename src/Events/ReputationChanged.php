@@ -10,7 +10,7 @@ use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
-class ReputationChanged implements ShouldBroadcast
+class ReputationChanged
 {
     use Dispatchable, SerializesModels;
 
@@ -41,21 +41,5 @@ class ReputationChanged implements ShouldBroadcast
         $this->user = $user;
         $this->point = $point;
         $this->increment = $increment;
-    }
-
-    /**
-     * Get the channels the event should broadcast on.
-     *
-     * @return \Illuminate\Broadcasting\Channel|\Illuminate\Broadcasting\Channel[]
-     */
-    public function broadcastOn()
-    {
-        $channelName = config('gamify.channel_name') . $this->user->getKey();
-
-        if (config('gamify.broadcast_on_private_channel')) {
-            return new PrivateChannel($channelName);
-        }
-
-        return new Channel($channelName);
     }
 }
